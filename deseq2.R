@@ -110,7 +110,7 @@ corrgram::corrgram(ctrlCorr, order=TRUE, lower.panel=corrgram::panel.pie,
                    col.regions=colorRampPalette("#1E90FF"))
 dev.off()
 
-## Control correlogram and export
+## Experimental correlogram and export
 expCorr <- expmatrix[,grep("patr1", colnames(expmatrix))]
 pdf("data/Exp_Correlogram.pdf", width=5, height=5)
 corrgram::corrgram(expCorr, order=TRUE, lower.panel=corrgram::panel.pie,
@@ -135,4 +135,4 @@ go_down <- gost(down$Symbol, organism = "dmelanogaster", evcodes = TRUE,
   select(c(source, term_id, term_name, p_value, 
            intersection_size, intersection)) %>%
   filter(p_value < 0.05) %>%
-  write_csv("data/down_upregulated.csv")
+  write_csv("data/go_downregulated.csv")
