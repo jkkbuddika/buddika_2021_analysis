@@ -104,7 +104,7 @@ navbarPage(
           withLoader(girafeOutput("plot")))
         ))),
   
-  
+  ## The RNAi screen page
   tabPanel(
     "Screen",
     fluidPage(
