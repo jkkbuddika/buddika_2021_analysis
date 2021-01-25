@@ -19,6 +19,7 @@ navbarPage(
         performed in the study, volcano plot visualization of DGE data and data related to the 
         genetic screen described in the manuscript. Read the abstract given below."
     ),
+    hr(),
     wellPanel(
       h4(strong("Coordinate transcriptional and post-transcriptional repression of pro-differentiation genes maintains intestinal stem cell identity")),
       "The role of Processing bodies (P-bodies), key sites of post-transcriptional control, in adult stem cells remains poorly understood. Here, we report that adult Drosophila intestinal stem cells, but not surrounding differentiated cells such as absorptive Enterocytes (ECs), harbor P-bodies that contain Drosophila orthologs of mammalian P-body components DDX6, EDC3, EDC4 and LSM14A/B. A targeted RNAi screen in intestinal progenitor cells identified 39 previously known and 64 novel P-body regulators, including Patr-1, a gene necessary for P-body assembly. Loss of Patr-1-dependent P-bodies leads to a loss of stem cells that is associated with inappropriate translation and expression of EC-fate gene nubbin. Transcriptomic analysis of progenitor cells identifies a cadre of such weakly transcribed pro-differentiation transcripts that are elevated after P-body loss. Altogether, this study identifies a coordinated P-body dependent, translational and transcriptional repression program that maintains a defined set of in vivo stem cells in a state primed for differentiation.",
@@ -74,16 +75,27 @@ navbarPage(
       wellPanel(
         "This page provides results of the targeted P-body genetic screen described in",
         a(href = "https://www.biorxiv.org/content/10.1101/2020.06.27.175398v1.abstract",
-          "Buddika et al. 2021", style = "color: #1E90FF"), "manuscript.",
-        p("Click the download button below to download the data to your machine."),
+          "Buddika et al. 2021", style = "color: #1E90FF"), 
+        "manuscript. The P-body morphology was assessed using two key markers", 
+        strong("TRAL"), "and", strong("PATR-1."), "The effect on IPSGs described in",
+        a(href = "https://jcs.biologists.org/content/133/10/jcs243451.abstract",
+          "Buddika et al. 2020", style = "color: #1E90FF"),
+        "was assessed using canonical stress granule markers",
+        strong("FMRP"), "and", strong("ROX8."),
+        "Note that not all genes were secreened with IPSG markers.",
         style = "background: #F9D7D7"
       ),
-      downloadButton(
-        "download_screenData",
-        "Download Data"
-      ),
-      hr(),
-      DTOutput("screenData"))),
+      p("Click the download button below to download the data to your machine. 
+        Abbreviations used in the table include:", 
+        strong("B = Big"), ",", strong("D = Diffuse"), ",",
+        strong("S = Small"), ",", strong("DB = Diffuse + Big"), "and",
+        strong("N = Normal.")), br(),
+        downloadButton(
+          "download_screenData",
+          "Download Data"
+        ),
+        hr(),
+        DTOutput("screenData"))),
   collapsible = TRUE
   )
 
