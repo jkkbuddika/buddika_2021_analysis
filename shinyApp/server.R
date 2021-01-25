@@ -7,15 +7,15 @@ library(ggiraph)
 library(tidyverse)
 
 ## RNA-seq data import and pre-processing
-patr1_data <- read_csv("https://github.com/jkkbuddika/buddika_2021_analysis/raw/main/shinyApp/data/DESeq2_Results_Patr-1.csv")
-esg_data <- read_csv("https://github.com/jkkbuddika/buddika_2021_analysis/raw/main/shinyApp/data/DESeq2_Results_esg.csv")
-rad21_data <- read_csv("https://github.com/jkkbuddika/buddika_2021_analysis/raw/main/shinyApp/data/DESeq2_Results_rad21.csv")
+patr1_data <- read_csv("data/DESeq2_Results_Patr-1.csv")
+esg_data <- read_csv("data/DESeq2_Results_esg.csv")
+rad21_data <- read_csv("data/DESeq2_Results_rad21.csv")
 
 dataSets <- list(patr1_data, esg_data, rad21_data)
 names(dataSets) <- c("Patr-1 Data", "esg Data", "Rad21 Data")
 
 ## Screen data import and pre-processing
-screen_data <- read_csv("https://github.com/jkkbuddika/buddika_2021_analysis/raw/main/shinyApp/data/Screen_data.csv")
+screen_data <- read_csv("data/Screen_data.csv")
 
 function(input, output, session) {
   
